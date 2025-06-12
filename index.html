@@ -35,7 +35,7 @@
       </figure>
       <p>Selon l’INSPQ, environ 20% des jeunes canadiens sont victimes d’intimidation dite traditionnelle en raison de leur apparence, de leur poids, de la couleur de leur peau, de leur sexe, c’est-à-dire en raison de leur différence.</p>
       <p>La loi sur l’instruction publique au Québec défini l’«intimidation» : tout comportement, parole, acte ou geste délibéré ou non à caractère répétitif, exprimé directement ou indirectement, y compris dans le cyberespace, dans un contexte caractérisé par l’inégalité des rapports de force entre les personnes concernées, ayant pour effet d’engendrer des sentiments de détresse et de léser, blesser, opprimer ou ostraciser.</p>
-      <blockquote>Les sports et les arts martiaux avec toutes les valeurs qui viennent avec ces disciplines m’ont permis d’acquérir de la confiance et de la résilience durant ma jeunesse et même en tant qu’adulte aujourd’hui. Une valeur universelle en particulier m’a permis d’être résilient à travers les obstacles et défis rencontrés en cours de chemin. Cette valeur c’est le RESPECT.</blockquote>
+      <blockquote>Les sports et les arts martiaux avec toutes les valeurs qui viennent avec ces disciplines m’ont permis d’acquérir de la confiance et de la résilience durant ma jeunesse et même en tant qu’adulte aujourd’hui. Une valeur universelle en particulier m’a permis d’être résilient à travers les obstacles et défis rencontrés en cours de chemin. Cette valeur c’est le RESPECT. Ce sont ces expériences de parcours que je veux partager aux jeunes dans l’espoir qu’ils soient inspirés et puissent devenir des artisans du RESPECT. Personnellement, je n’ai jamais été victime d’intimidation mais j’ai été impuissant face à des scènes d’intimidation. Par peur, je n’ai rien pu y faire mais je m’étais promis qu’un jour je ferai quelque chose pour mettre fin à ça.  Voir ou entendre qu’un jeune garçon ou une jeune fille se fait maltraiter, insulter ou intimider par d’autres enfants me déchire intérieurement. 30 ans après, je veux remplir cette promesse que je m’étais faite.</blockquote>
       <p>Ce sont ces expériences de parcours que je veux partager aux jeunes dans l’espoir qu’ils soient inspirés et puissent devenir des artisans du RESPECT. Personnellement, je n’ai jamais été victime d’intimidation mais j’ai été impuissant face à des scènes d’intimidation. Par peur, je n’ai rien pu y faire mais je m’étais promis qu’un jour je ferai quelque chose pour mettre fin à ça.</p>
     </section>
     
@@ -58,8 +58,139 @@
       <p>Les commanditaires lors des Tournois GABAO ont été : GURU, ASSURUNI, OLIGO, ADONIS, FORD LÉVEILLÉ et des donateurs individuels.</p>
     </section>
 
-    <section class="don">
-      <h2><a href="don.html">FAITES UN DON</a></h2>
+    <section class="Exemples">
+      <h2> CAMPAGNE RESPECT avec l'école Willingdon</h2>
+      <div>
+
+          <style>
+            .slideshow-container {
+              position: relative;
+              width: 800px;  /* adjust as needed */
+              height: 500px; /* adjust as needed */
+              margin: auto;
+              overflow: hidden;
+            }
+
+            .slide {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;  /* Initially hide all images */
+              transition: opacity 1s ease-in-out; /* Smooth fade effect */
+            }
+
+            .slide img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover; /* Ensure images fill the container */
+            }
+
+            /* Image 1 Adjustments */
+            .slide:nth-child(1) img {
+              padding-top: 10%;
+              padding-bottom: 10%;
+            }
+
+            /* Image 2 Adjustments */
+            .slide:nth-child(2) img {
+              object-fit: contain;  /* Ensure Image 2 is fully visible */
+              object-position: center center;  /* Center Image 2 */
+            }
+          </style>
+
+          <div class="slideshow-container">
+            <div class="slide" id="image1">
+              <img src="./assets/images/FondationGabao/4femmesSlide1.jpg" alt="Image 1">
+            </div>
+            <div class="slide" id="image2">
+              <img src="./assets/images/FondationGabao/newsSlide2.jpg" alt="Image 2">
+            </div>
+          </div>
+
+          <script>
+            // Get references to both images
+            const image1 = document.getElementById('image1');
+            const image2 = document.getElementById('image2');
+
+            // Initial state: Show Image 1
+            image1.style.opacity = 1;
+            image2.style.opacity = 0;
+
+            // Function to switch images
+            function switchImages() {
+              if (image1.style.opacity == 1) {
+                image1.style.opacity = 0;
+                image2.style.opacity = 1;
+              } else {
+                image1.style.opacity = 1;
+                image2.style.opacity = 0;
+              }
+            }
+
+            // Set an interval to switch images every 15 seconds
+            setInterval(switchImages, 15000);  // 15 seconds
+
+          </script>
+
+      </div>
+      <h2> Organismes que nous avons appuyés depuis 2014 </h2>
+      <div id="image-layout">
+        <style>
+          /* Container div */
+          #image-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns for left and right */
+            grid-template-rows: 1fr 1fr; /* Two rows for top and bottom */
+            width: 100%;
+            height: 100%; /* Set height of the container */
+            position: relative;
+          }
+
+          /* Ensure each image fills the grid area */
+          #image-layout img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the grid area */
+          }
+
+          /* Top-left image */
+          #top-left {
+            grid-column: 1; /* Position in the first column */
+            grid-row: 1;    /* Position in the first row */
+          }
+
+          /* Top-right image */
+          #top-right {
+            grid-column: 2; /* Position in the second column */
+            grid-row: 1;    /* Position in the first row */
+          }
+
+          /* Bottom-left image */
+          #bottom-left {
+            grid-column: 1; /* Position in the first column */
+            grid-row: 2;    /* Position in the second row */
+          }
+
+          /* Bottom-right image */
+          #bottom-right {
+            grid-column: 2; /* Position in the second column */
+            grid-row: 2;    /* Position in the second row */
+          }
+
+        </style>
+        
+        <!-- Use the correct absolute paths to your images -->
+        <img src="assets/images/FondationGabao/topleft.png" alt="Image 1" id="top-left">
+        <img src="assets/images/FondationGabao/topright.png" alt="Image 2" id="top-right">
+        <img src="assets/images/FondationGabao/bottomleft.png" alt="Image 3" id="bottom-left">
+        <img src="assets/images/FondationGabao/bottomright.png" alt="Image 4" id="bottom-right">
+      </div>
+    </section>
+
+    <section class="tournoi">
+      <h2><a href="tournoi.html">EN SAVOIR PLUS SUR LE TOURNOI GABAO CONTRE L’INTIMIDATION</a></h2>
     </section>
   </main>
 </body>
