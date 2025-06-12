@@ -1,0 +1,133 @@
+/* style.min.css - Critical and extracted minimal CSS */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',sans-serif;line-height:1.6;color:#333;background:#fff}
+.container{width:90%;max-width:1200px;margin:0 auto;padding:0 1em}
+.site-header{background:#005b96;padding:1em 0}
+.site-header .logo img{height:60px}
+.main-nav ul{list-style:none;display:flex;gap:1em}
+.main-nav ul li a{color:#fff;text-decoration:none;text-transform:uppercase;font-size:0.85rem}
+.intro{padding:3em 0;text-align:center}
+.intro h1{font-size:2.5rem;color:#005b96;margin-bottom:1rem}
+.intro figure img{width:100%;max-width:800px;height:auto;margin:1rem auto}
+section{margin-bottom:2em}
+blockquote{font-style:italic;border-left:4px solid #005b96;padding-left:1em;color:#555;margin:1em 0}
+h2{font-size:2rem;color:#005b96;margin-bottom:0.5em}
+.site-footer{background:#f1f1f1;padding:1em 0;text-align:center;font-size:0.9rem;color:#555}
+/* Nouvelles page */
+.nouvelles-page h1 {
+  font-size: 2.5rem;
+  color: #005b96;
+  margin: 1.5em 0;
+}
+.news-list {
+  display: grid;
+  gap: 2em;
+}
+.news-list article {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1em;
+}
+.news-list article h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5em;
+}
+.news-list article p {
+  font-size: 0.95rem;
+  color: #555;
+}
+.read-more {
+  display: inline-block;
+  margin-top: 0.5em;
+  text-decoration: none;
+  font-weight: bold;
+  color: #005b96;
+}
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* a propos page */
+.propos-page h1 {
+  font-size: 2.5rem;
+  color: #005b96;
+  margin: 1em 0;
+}
+.propos-page p {
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+.event-images {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  margin: 1em 0;
+}
+.event-images img {
+  width: calc(50% - 0.5em);
+  height: auto;
+  border-radius: 4px;
+}
+.sponsors-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1em;
+  margin: 1.5em 0;
+}
+.sponsors-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.tournoi-page ul {
+  list-style: disc inside;
+  margin-bottom: 1em;
+}
+
+/* Tolérance Zéro page */
+.zero-page h1 {
+  font-size: 2.25rem;
+  color: #005b96;
+  margin-bottom: 1em;
+}
+.zero-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-top: 1.5em;
+}
+.zero-form fieldset {
+  border: 1px solid #ddd;
+  padding: 1em;
+  border-radius: 4px;
+}
+.zero-form legend {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+.zero-form label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.form-group input {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.zero-form button {
+  align-self: flex-start;
+  padding: 0.75em 1.5em;
+  background-color: #005b96;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.zero-form button:hover {
+  background-color: #004270;
+}
