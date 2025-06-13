@@ -5,6 +5,230 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À propos de Gabao – Fondation GABAO</title>
   <link rel="stylesheet" href="assets/css/style.min.css">
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #FFD700;
+      --black: #111111;
+      --white: #fff;
+      --header-bg: rgba(17,17,17,0.97);
+      --card-bg: #181818;
+      --border-radius: 18px;
+      --shadow: 0 4px 32px rgba(0,0,0,0.13);
+      --transition: 0.2s cubic-bezier(.4,0,.2,1);
+    }
+    html, body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      margin: 0;
+      min-height: 100vh;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--header-bg);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      z-index: 100;
+      transition: background var(--transition);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 1.5rem;
+    }
+    .logo img {
+      height: 48px;
+      filter: brightness(1.1) drop-shadow(0 2px 8px var(--gold));
+      transition: transform var(--transition);
+    }
+    .logo img:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+    .main-nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .main-nav a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 600;
+      padding: 0.5rem 1.2rem;
+      border-radius: 24px;
+      transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+      background: transparent;
+      border: 2px solid transparent;
+    }
+    .main-nav a.active, .main-nav a:hover {
+      background: var(--gold);
+      color: var(--black);
+      box-shadow: 0 2px 12px var(--gold);
+      border-color: var(--gold);
+    }
+    main.container.apropos-page {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 2.5rem 2rem;
+      position: relative;
+      border: 1.5px solid var(--gold);
+    }
+    h1, h2 {
+      font-weight: 700;
+      color: var(--gold);
+      margin-top: 0;
+      letter-spacing: 0.01em;
+    }
+    h1 {
+      font-size: 2.3rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p, li {
+      color: var(--white);
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+    strong {
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .banner-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 2rem 0 1.5rem 0;
+    }
+    .banner-images img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px var(--gold);
+      transition: transform var(--transition), box-shadow var(--transition);
+      border: 2px solid var(--gold);
+      background: var(--black);
+    }
+    .banner-images img:hover {
+      transform: scale(1.025);
+      box-shadow: 0 6px 24px var(--gold);
+    }
+    .sponsors-gallery, .partners-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      margin: 2rem 0 1.5rem 0;
+    }
+    .sponsors-gallery img, .partners-gallery img {
+      height: 80px;
+      width: auto;
+      border-radius: 10px;
+      background: var(--black);
+      box-shadow: 0 2px 8px var(--gold);
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+      object-fit: contain;
+      padding: 0.5rem;
+      border: 2px solid var(--gold);
+    }
+    .sponsors-gallery img:hover, .partners-gallery img:hover {
+      transform: scale(1.07) rotate(-2deg);
+      box-shadow: 0 6px 24px var(--gold);
+      background: var(--gold);
+    }
+    .why-participate ul {
+      padding-left: 1.2rem;
+      margin: 0.7rem 0 1.5rem 0;
+    }
+    .why-participate li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.2em;
+    }
+    .why-participate li::before {
+      content: "•";
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 1.2em;
+      top: 0.1em;
+    }
+    .videos {
+      margin: 2.5rem 0;
+    }
+    .video-embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px var(--gold);
+      background: #000;
+      border: 2px solid var(--gold);
+    }
+    .video-embed iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      border: 0;
+    }
+    .event-details ul {
+      margin: 0.7rem 0 1.5rem 0;
+      padding-left: 1.2rem;
+    }
+    .event-details li {
+      margin-bottom: 0.4rem;
+    }
+    .event-details a, .event-details a:visited {
+      color: var(--black);
+      background: var(--gold);
+      padding: 0.4em 1em;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background var(--transition), color var(--transition);
+      border: 2px solid var(--gold);
+      box-shadow: 0 2px 8px var(--gold);
+      display: inline-block;
+      margin-top: 0.5em;
+    }
+    .event-details a:hover {
+      background: var(--black);
+      color: var(--gold);
+      border-color: var(--gold);
+      box-shadow: 0 4px 16px var(--gold);
+    }
+    @media (max-width: 700px) {
+      main.container.apropos-page {
+        padding: 1.2rem 0.5rem;
+      }
+      .banner-images {
+        grid-template-columns: 1fr;
+      }
+      .site-header .container {
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+      .main-nav ul {
+        gap: 0.7rem;
+      }
+      .sponsors-gallery img, .partners-gallery img {
+        height: 56px;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->

@@ -5,30 +5,284 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nouvelles – Fondation GABAO</title>
   <link rel="stylesheet" href="assets/css/style.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    .nouvelle-page {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 2rem 0;
+    :root {
+      --gold: #FFD700;
+      --gold-gradient: linear-gradient(90deg, #FFD700 0%, #FFC300 100%);
+      --black: #111111;
+      --soft-black: #181818;
+      --white: #fff;
+      --header-bg: rgba(17,17,17,0.97);
+      --card-bg: #181818;
+      --border-radius: 18px;
+      --shadow: 0 4px 32px rgba(0,0,0,0.13);
+      --transition: 0.2s cubic-bezier(.4,0,.2,1);
     }
-    .post {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
+    html, body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      margin: 0;
+      min-height: 100vh;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--header-bg);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      z-index: 100;
+      transition: background var(--transition);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 1.5rem;
+    }
+    .logo img {
+      height: 48px;
+      filter: brightness(1.1) drop-shadow(0 2px 8px var(--gold));
+      transition: transform var(--transition);
+    }
+    .logo img:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+    .main-nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .main-nav a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 600;
+      padding: 0.5rem 1.2rem;
+      border-radius: 24px;
+      transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+      background: transparent;
+      border: 2px solid transparent;
+    }
+    .main-nav a.active, .main-nav a:hover {
+      background: var(--gold-gradient);
+      color: var(--black);
+      box-shadow: 0 2px 12px var(--gold);
+      border-color: var(--gold);
+    }
+    main.container, main.nouvelle-page {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 2.5rem 2rem;
+      position: relative;
+      border: 1.5px solid rgba(255,215,0,0.25);
+    }
+    h1, h2 {
+      font-weight: 700;
+      color: var(--gold);
+      margin-top: 0;
+      letter-spacing: 0.01em;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    h1 {
+      font-size: 2.3rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      -webkit-text-fill-color: transparent;
+    }
+    p, li {
+      color: var(--white);
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+    strong {
+      color: var(--gold);
+      font-weight: 700;
+    }
+    a, a:visited {
+      color: var(--gold);
+      text-decoration: underline;
+      transition: color var(--transition), background var(--transition);
+    }
+    a:hover {
+      color: var(--black);
+      background: var(--gold-gradient);
+      border-radius: 6px;
+      text-decoration: none;
+      padding: 0.1em 0.4em;
+    }
+    .news-list, .news-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 2rem 0 1.5rem 0;
+    }
+    .news-card {
+      background: var(--soft-black);
+      border: 1.5px solid rgba(255,215,0,0.25);
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(255,215,0,0.08), 0 1.5px 8px rgba(0,0,0,0.13);
+      padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+      color: var(--white);
+      width: 100%;
+      max-width: 370px;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      margin-bottom: 1.2rem;
       display: flex;
       flex-direction: column;
-      transition: transform 0.2s ease;
+      align-items: flex-start;
     }
-    .post:hover { transform: translateY(-4px); }
-    .post-header { padding: 1.5rem; border-bottom: 1px solid #eee; }
-    .post-header h2 { font-size: 1.25rem; margin: 0; color: #005b96; }
-    .meta { font-size: 0.85rem; color: #777; margin-top: 0.5rem; }
-    .content { padding: 1.5rem; flex-grow: 1; }
-    .excerpt { margin-bottom: 1rem; color: #444; line-height: 1.5; }
-    .expand-btn { background: none; border: none; color: #005b96; cursor: pointer; font-weight: bold; }
-    .full-content { display: none; margin-top: 1rem; color: #333; line-height: 1.6; }
+    .news-card:hover {
+      transform: scale(1.03) translateY(-4px);
+      box-shadow: 0 6px 32px var(--gold), 0 2px 12px rgba(0,0,0,0.18);
+      border-color: var(--gold);
+    }
+    .news-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 0.8rem;
+      border: 1.5px solid rgba(255,215,0,0.25);
+      background: var(--black);
+      box-shadow: 0 1.5px 8px rgba(255,215,0,0.08);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .news-card img:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 16px var(--gold);
+    }
+    .news-card h3 {
+      color: var(--gold);
+      font-size: 1.15rem;
+      margin: 0.5rem 0 0.3rem 0;
+      font-weight: 700;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .news-card .date {
+      color: #ccc;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .news-card a.btn, .news-card .btn {
+      background: var(--gold-gradient);
+      color: var(--black);
+      border: none;
+      border-radius: 24px;
+      font-weight: 700;
+      padding: 0.4em 1.2em;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+      box-shadow: 0 2px 8px var(--gold);
+      margin-top: 0.7em;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .news-card a.btn:hover, .news-card .btn:hover {
+      background: var(--black);
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 4px 16px var(--gold);
+    }
+    .expand-btn {
+      background: var(--gold-gradient);
+      color: var(--black);
+      border: none;
+      border-radius: 24px;
+      font-weight: 700;
+      padding: 0.45em 1.4em;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
+      box-shadow: 0 2px 8px var(--gold);
+      margin-top: 0.7em;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 0.02em;
+      outline: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .expand-btn:hover, .expand-btn:focus {
+      background: var(--black);
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 4px 16px var(--gold);
+      transform: translateY(-2px) scale(1.04);
+    }
+    .expand-btn::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255,215,0,0.15);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s, height 0.3s;
+      z-index: 0;
+    }
+    .expand-btn:active::after {
+      width: 120%;
+      height: 200%;
+    }
+    .expand-btn:active {
+      box-shadow: 0 2px 8px var(--gold);
+      transform: scale(0.98);
+    }
+    .full-content {
+      display: none;
+      transition: max-height 0.4s var(--transition), opacity 0.3s;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+    .full-content.expanded {
+      display: block;
+      opacity: 1;
+      max-height: 1000px;
+      margin-bottom: 1em;
+      transition: max-height 0.5s var(--transition), opacity 0.3s;
+    }
+    @media (max-width: 700px) {
+      main.container, main.nouvelle-page {
+        padding: 1.2rem 0.5rem;
+      }
+      .site-header .container {
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+      .main-nav ul {
+        gap: 0.7rem;
+      }
+      .news-card {
+        max-width: 100%;
+      }
+      .news-list, .news-gallery {
+        gap: 0.7rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -161,11 +415,12 @@
   </footer>
   <script>
     document.querySelectorAll('.expand-btn').forEach(btn => {
+      const full = btn.previousElementSibling;
+      // Ensure collapsed by default
+      full.classList.remove('expanded');
       btn.addEventListener('click', () => {
-        const full = btn.previousElementSibling;
-        const isVisible = full.style.display === 'block';
-        full.style.display = isVisible ? 'none' : 'block';
-        btn.textContent = isVisible ? 'Lire la suite' : 'Réduire';
+        const isExpanded = full.classList.toggle('expanded');
+        btn.textContent = isExpanded ? 'Réduire' : 'Lire la suite';
       });
     });
   </script>
