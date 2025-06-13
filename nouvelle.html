@@ -2,50 +2,172 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nouvelles – Fondation GABAO</title>
   <link rel="stylesheet" href="assets/css/style.min.css">
+  <style>
+    .nouvelle-page {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+    .post {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+    }
+    .post:hover { transform: translateY(-4px); }
+    .post-header { padding: 1.5rem; border-bottom: 1px solid #eee; }
+    .post-header h2 { font-size: 1.25rem; margin: 0; color: #005b96; }
+    .meta { font-size: 0.85rem; color: #777; margin-top: 0.5rem; }
+    .content { padding: 1.5rem; flex-grow: 1; }
+    .excerpt { margin-bottom: 1rem; color: #444; line-height: 1.5; }
+    .expand-btn { background: none; border: none; color: #005b96; cursor: pointer; font-weight: bold; }
+    .full-content { display: none; margin-top: 1rem; color: #333; line-height: 1.6; }
+  </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="site-header">
     <div class="container">
-      <a href="index.html" class="logo">
-        <img src="assets/images/logo-gabao.png" alt="Fondation GABAO">
-      </a>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">FONDATION GABAO</a></li>
-          <li><a href="nouvelle.html" class="active">NOUVELLES</a></li>
-          <li><a href="tournoi.html">TOURNOI GABAO</a></li>
-          <li><a href="zero.html">CODE DE TOLÉRANCE ZÉRO – GABAO 2025</a></li>
-          <li><a href="apropos.html">À PROPOS DE GABAO</a></li>
-          <!-- <li><a href="don.html">FAITES UN DON</a></li> -->
-        </ul>
-      </nav>
+      <a href="index.html" class="logo"><img src="assets/images/logo-gabao.png" alt="Fondation GABAO"></a>
+      <nav class="main-nav"><ul>
+        <li><a href="index.html">FONDATION GABAO</a></li>
+        <li><a href="nouvelle.html" class="active">NOUVELLES</a></li>
+        <li><a href="tournoi.html">TOURNOI GABAO</a></li>
+        <li><a href="zero.html">CODE DE TOLÉRANCE ZÉRO</a></li>
+        <li><a href="apropos.html">À PROPOS DE GABAO</a></li>
+      </ul></nav>
     </div>
   </header>
-
-  <!-- Main Content -->
-  <main class="container nouvelles-page">
-    <h1>Nouvelles</h1>
-    <section class="news-list">
-      <article id="article1">
-        <h2>Lancement du nouveau centre communautaire</h2>
-        <p><time datetime="2025-03-15">15 mars 2025</time> – La Fondation GABAO a inauguré...</p>
-        <a href="#" class="read-more">Lire la suite</a>
-      </article>
-      <article id="article2">
-        <h2>Campagne de vaccination réussie</h2>
-        <p><time datetime="2025-02-10">10 février 2025</time> – Grâce à nos partenaires...</p>
-        <a href="#" class="read-more">Lire la suite</a>
-      </article>
-      <article id="article3">
-        <h2>Programme de bourses 2025</h2>
-        <p><time datetime="2025-01-05">5 janvier 2025</time> – La campagne de bourses est ouverte...</p>
-        <a href="#" class="read-more">Lire la suite</a>
-      </article>
-    </section>
+  <main class="container nouvelle-page">
+    <article class="post">
+      <div class="post-header">
+        <h2>DON DE 5000$</h2>
+        <p class="meta">23 décembre 2023 &bull; Jonathan Mvié</p>
+      </div>
+      <div class="content">
+        <p class="excerpt">C’est avec des cœurs remplis d’un grand sentiment d’accomplissement que nous avons remis, en ce 4 avril 2023, les profits recueillis lors du dernier Tournoi GABAO à l’organisme Diapason Jeunesse.</p>
+        <div class="full-content"><p>C’est avec des cœurs remplis d’un grand sentiment d’accomplissement que nous avons remis, en ce 4 avril 2023, les profits recueillis lors du dernier Tournoi GABAO à l’organisme Diapason Jeunesse. Merci à tous ceux et celles qui ont participé, aux bénévoles, aux arbitres, aux commanditaires et aux donateurs. Les fonds ont été intégralement versés à Diapason Jeunesse pour soutenir leurs programmes de lutte contre l’intimidation.</p></div>
+        <button class="expand-btn">Lire la suite</button>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-header">
+        <h2>LANCEMENT DE LA CAMPAGNE RESPECT – ÉCOLE WILLINGDON</h2>
+        <p class="meta">8 septembre 2021 &bull; Jonathan Mvié</p>
+      </div>
+      <div class="content">
+        <p class="excerpt">Le mercredi 26 août dernier, j’ai eu l’immense privilège de m’adresser à une quarantaine de professeurs de l’École Willingdon dans le cadre du lancement de la campagne RESPECT...</p>
+        <div class="full-content"><p>Le mercredi 26 août dernier, j’ai eu l’immense privilège de m’adresser à une quarantaine de professeurs de l’École Willingdon lors du lancement de la campagne RESPECT pour l’année scolaire 2021-2022. Merci à Mme Carmen Nicolas, directrice de l’école, pour cette opportunité. Nous avons discuté des outils pédagogiques et du matériel promotionnel destinés à sensibiliser les jeunes aux valeurs du respect.</p></div>
+        <button class="expand-btn">Lire la suite</button>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-header">
+        <h2>Tournoi GABAO 2021</h2>
+        <p class="meta">8 septembre 2021 &bull; Jonathan Mvié</p>
+      </div>
+      <div class="content">
+        <p class="excerpt">Soleil, action, intensité, joie et émotions étaient au rendez-vous pour cette 8ième édition du Tournoi GABAO contre l’intimidation et la discrimination...</p>
+        <div class="full-content"><p>Soleil, action, intensité, joie et émotions étaient au rendez-vous pour cette 8ième édition du Tournoi GABAO. Merci au comité organisateur, aux bénévoles, aux arbitres, ainsi qu’à nos sponsors et donateurs pour leur soutien et leur engagement.</p></div>
+        <button class="expand-btn">Lire la suite</button>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-header">
+        <h2>Tournoi GABAO 2020</h2>
+        <p class="meta">9 juillet 2020 &bull; Jonathan Mvié</p>
+      </div>
+      <div class="content">
+        <p class="excerpt">Le Tournoi GABAO 2020 aura lieu le 25 juillet 2020 au centre SportXpo de Laval...</p>
+        <div class="full-content"><p>Le Tournoi GABAO 2020 se tiendra le 25 juillet au centre SportXpo de Laval. Restez à l’écoute pour les modalités d’inscription et les détails des matchs.</p></div>
+        <button class="expand-btn">Lire la suite</button>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-header">
+        <h2>Retenez la date – 11 juillet 2020</h2>
+        <p class="meta">18 février 2020 &bull; Jonathan Mvié</p>
+      </div>
+      <div class="content">
+        <p class="excerpt">Annonce de la date du prochain Tournoi GABAO contre l’intimidation et la discrimination...</p>
+        <div class="full-content"><p>Nous avons le plaisir d’annoncer que le Tournoi GABAO 2020 aura lieu le 11 juillet. Les informations sur les inscriptions et le format seront bientôt disponibles.</p></div>
+        <button class="expand-btn">Lire la suite</button>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-header">
+        <h2>Don à Diapason Jeunesse</h2>
+        <p class="meta">18 février 2020 &bull; Jonathan Mvié</p>
+      </div>
+      <div class="content">
+        <p class="excerpt">Hier soir (mercredi 29 janvier 2020), j’ai été reçu chaleureusement par Madame Lachaine...</p>
+        <div class="full-content"><p>Hier soir, j’ai rencontré Mme Lachaine, directrice de Diapason Jeunesse, pour remettre officiellement les fonds collectés lors du dernier tournoi. Merci à tous les contributeurs qui rendent ces initiatives possibles.</p></div>
+        <button class="expand-btn">Lire la suite</button>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-header">
+        <h2>Pourquoi On Joue</h2>
+        <p class="meta">17 juillet 2019 &bull; Jonathan Mvié</p>
+      </div>
+      <div class="content">
+        <p class="excerpt">Réflexions sur l’importance du sport et du respect chez les jeunes...</p>
+        <div class="full-content"><p>Le sport est un vecteur de respect, d’esprit d’équipe et de résilience. À travers « Pourquoi On Joue », nous partageons des expériences et des conseils pour encourager les jeunes à développer ces qualités essentielles.</p></div>
+        <button class="expand-btn">Lire la suite</button>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-header">
+        <h2>Tournoi GABAO 2019</h2>
+        <p class="meta">16 juillet 2019 &bull; Jonathan Mvié</p>
+      </div>
+      <div class="content">
+        <p class="excerpt">Le Tournoi GABAO 2019 demeurera sans aucun doute une édition remplie d’émotions...</p>
+        <div class="full-content"><p>Malgré la pluie, les joueurs ont offert un spectacle incroyable au Parc Isabelle. Merci à tous pour votre passion et votre fair-play lors du Tournoi GABAO 2019.</p></div>
+        <button class="expand-btn">Lire la suite</button>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-header">
+        <h2>Lancement du Tournoi GABAO 2019</h2>
+        <p class="meta">7 avril 2019 &bull; Jonathan Mvié</p>
+      </div>
+      <div class="content">
+        <p class="excerpt">Le comité organisateur du Tournoi GABAO s’est rencontré pour discuter...</p>
+        <div class="full-content"><p>Le comité organisateur s’est réuni pour planifier l’édition 2019, en mettant l’accent sur la sécurité des terrains et le bien-être des participants.</p></div>
+        <button class="expand-btn">Lire la suite</button>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-header">
+        <h2>Un don de 4 700$ à la Fondation Tel-Jeunes</h2>
+        <p class="meta">5 décembre 2018 &bull; Jonathan Mvié</p>
+      </div>
+      <div class="content">
+        <p class="excerpt">La 5ième édition du Tournoi GABAO a permis d’amasser 4 689$...</p>
+        <div class="full-content"><p>Le 27 octobre 2018, nous avons remis un chèque de 4 700$ à la Fondation Tel-Jeunes, fruit des bénéfices du Tournoi GABAO 2018. Merci à tous les participants et donateurs !</p></div>
+        <button class="expand-btn">Lire la suite</button>
+      </div>
+    </article>
   </main>
+  <footer class="site-footer">
+    <div class="container"><p>&copy; 2025 Fondation GABAO</p></div>
+  </footer>
+  <script>
+    document.querySelectorAll('.expand-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const full = btn.previousElementSibling;
+        const isVisible = full.style.display === 'block';
+        full.style.display = isVisible ? 'none' : 'block';
+        btn.textContent = isVisible ? 'Lire la suite' : 'Réduire';
+      });
+    });
+  </script>
 </body>
 </html>
