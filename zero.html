@@ -9,6 +9,7 @@
   <style>
     :root {
       --gold: #FFD700;
+      --gold-gradient: linear-gradient(90deg, #FFD700 0%, #FFC300 100%);
       --black: #111111;
       --white: #fff;
       --header-bg: rgba(17,17,17,0.97);
@@ -62,11 +63,54 @@
       transition: background var(--transition), color var(--transition), box-shadow var(--transition);
       background: transparent;
       border: 2px solid transparent;
+      box-shadow: none;
+      pointer-events: auto;
+      min-width: 0;
+      min-height: 0;
+      /* Prevent size shift on hover/focus by reserving space for border and padding */
+      box-sizing: border-box;
     }
-    .main-nav a.active, .main-nav a:hover {
-      background: var(--gold);
+    .main-nav a.active {
+      background: var(--gold-gradient, var(--gold));
       color: var(--black);
-      box-shadow: 0 2px 12px var(--gold);
+      border-color: var(--gold);
+      box-shadow: none;
+    }
+    .main-nav a.active:hover,
+    .main-nav a.active:focus {
+      /* Prevent any hover/focus effect on active tab */
+      background: var(--gold-gradient, var(--gold));
+      color: var(--black);
+      border-color: var(--gold);
+      box-shadow: none;
+      outline: none;
+    }
+    .main-nav a:not(.active):hover,
+    .main-nav a:not(.active):focus {
+      background: var(--gold-gradient, var(--gold));
+      color: var(--black);
+      border-color: var(--gold);
+      box-shadow: none;
+    }
+    .main-nav a,
+    .main-nav a.active,
+    .main-nav a:not(.active):hover,
+    .main-nav a:not(.active):focus,
+    .main-nav a.active:hover,
+    .main-nav a.active:focus {
+      /* Ensure consistent border and padding at all times */
+      border-width: 2px;
+      border-style: solid;
+      border-color: transparent;
+      padding: 0.5rem 1.2rem;
+    }
+    .main-nav a.active,
+    .main-nav a.active:hover,
+    .main-nav a.active:focus {
+      border-color: var(--gold);
+    }
+    .main-nav a:not(.active):hover,
+    .main-nav a:not(.active):focus {
       border-color: var(--gold);
     }
     main.container, main.zero-page {
@@ -84,6 +128,10 @@
       color: var(--gold);
       margin-top: 0;
       letter-spacing: 0.01em;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     h1 {
       font-size: 2.3rem;
@@ -91,11 +139,37 @@
       border-bottom: 2px solid var(--gold);
       padding-bottom: 0.5rem;
       display: inline-block;
+      -webkit-text-fill-color: transparent;
     }
     h2 {
       font-size: 1.4rem;
       margin-top: 2.5rem;
       margin-bottom: 1rem;
+      -webkit-text-fill-color: transparent;
+    }
+    /* Style for the submit button to match gold/black theme */
+    button[type="submit"] {
+      background: var(--gold-gradient);
+      color: var(--black);
+      border: none;
+      border-radius: 24px;
+      font-weight: 700;
+      padding: 0.5em 2em;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+      box-shadow: 0 2px 8px var(--gold);
+      margin-top: 1.2em;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 0.02em;
+      outline: none;
+    }
+    button[type="submit"]:hover, button[type="submit"]:focus {
+      background: var(--black);
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 4px 16px var(--gold);
     }
     p, li {
       color: var(--white);

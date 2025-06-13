@@ -39,14 +39,12 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.7rem 1.5rem;
+      box-sizing: border-box;
     }
-    .logo img {
-      height: 48px;
-      filter: brightness(1.1) drop-shadow(0 2px 8px var(--gold));
-      transition: transform var(--transition);
-    }
-    .logo img:hover {
-      transform: scale(1.05) rotate(-2deg);
+    nav.main-nav {
+      margin-left: 0;
+      padding-left: 0;
+      flex: unset;
     }
     .main-nav ul {
       display: flex;
@@ -55,21 +53,13 @@
       margin: 0;
       padding: 0;
     }
-    .main-nav a {
-      text-decoration: none;
-      color: var(--white);
-      font-weight: 600;
-      padding: 0.5rem 1.2rem;
-      border-radius: 24px;
-      transition: background var(--transition), color var(--transition), box-shadow var(--transition);
-      background: transparent;
-      border: 2px solid transparent;
+    .logo img {
+      height: 48px;
+      filter: brightness(1.1) drop-shadow(0 2px 8px var(--gold));
+      transition: transform var(--transition);
     }
-    .main-nav a.active, .main-nav a:hover {
-      background: var(--gold-gradient);
-      color: var(--black);
-      box-shadow: 0 2px 12px var(--gold);
-      border-color: var(--gold);
+    .logo img:hover {
+      transform: scale(1.05) rotate(-2deg);
     }
     main.container, main.nouvelle-page {
       max-width: 900px;
@@ -289,13 +279,15 @@
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo"><img src="assets/images/logo-gabao.png" alt="Fondation GABAO"></a>
-      <nav class="main-nav"><ul>
-        <li><a href="index.html">FONDATION GABAO</a></li>
-        <li><a href="nouvelle.html" class="active">NOUVELLES</a></li>
-        <li><a href="tournoi.html">TOURNOI GABAO</a></li>
-        <li><a href="zero.html">CODE DE TOLÉRANCE ZÉRO</a></li>
-        <li><a href="apropos.html">À PROPOS DE GABAO</a></li>
-      </ul></nav>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">FONDATION GABAO</a></li>
+          <li><a href="nouvelle.html" class="active">NOUVELLES</a></li>
+          <li><a href="tournoi.html">TOURNOI GABAO</a></li>
+          <li><a href="zero.html">CODE DE TOLÉRANCE ZÉRO - GABAO 2025</a></li>
+          <li><a href="apropos.html">À PROPOS DE GABAO</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
   <main class="container nouvelle-page">

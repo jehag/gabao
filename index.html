@@ -9,6 +9,7 @@
   <style>
     :root {
       --gold: #FFD700;
+      --gold-gradient: linear-gradient(90deg, #FFD700 0%, #FFC300 100%);
       --black: #111111;
       --white: #fff;
       --header-bg: rgba(17,17,17,0.97);
@@ -53,22 +54,6 @@
       margin: 0;
       padding: 0;
     }
-    .main-nav a {
-      text-decoration: none;
-      color: var(--white);
-      font-weight: 600;
-      padding: 0.5rem 1.2rem;
-      border-radius: 24px;
-      transition: background var(--transition), color var(--transition), box-shadow var(--transition);
-      background: transparent;
-      border: 2px solid transparent;
-    }
-    .main-nav a.active, .main-nav a:hover {
-      background: var(--gold);
-      color: var(--black);
-      box-shadow: 0 2px 12px var(--gold);
-      border-color: var(--gold);
-    }
     main.container, main.index-page {
       max-width: 900px;
       margin: 2.5rem auto;
@@ -84,6 +69,10 @@
       color: var(--gold);
       margin-top: 0;
       letter-spacing: 0.01em;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     h1 {
       font-size: 2.3rem;
@@ -91,11 +80,24 @@
       border-bottom: 2px solid var(--gold);
       padding-bottom: 0.5rem;
       display: inline-block;
+      -webkit-text-fill-color: transparent;
     }
     h2 {
       font-size: 1.4rem;
       margin-top: 2.5rem;
       margin-bottom: 1rem;
+      -webkit-text-fill-color: transparent;
+    }
+    blockquote {
+      color: var(--gold);
+      background: rgba(255, 215, 0, 0.08);
+      border-left: 4px solid var(--gold);
+      padding: 1.1em 1.5em;
+      margin: 1.5em 0;
+      font-style: italic;
+      font-size: 1.13rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(255,215,0,0.08);
     }
     p, li {
       color: var(--white);
@@ -157,12 +159,11 @@
       </a>
       <nav class="main-nav">
         <ul>
-          <li><a href="index.html">FONDATION GABAO</a></li>
+          <li><a href="index.html" class="active">FONDATION GABAO</a></li>
           <li><a href="nouvelle.html">NOUVELLES</a></li>
           <li><a href="tournoi.html">TOURNOI GABAO</a></li>
           <li><a href="zero.html">CODE DE TOLÉRANCE ZÉRO – GABAO 2025</a></li>
           <li><a href="apropos.html">À PROPOS DE GABAO</a></li>
-          <!-- <li><a href="don.html">FAITES UN DON</a></li> -->
         </ul>
       </nav>
     </div>

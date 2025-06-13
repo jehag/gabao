@@ -131,3 +131,61 @@ h2{font-size:2rem;color:#005b96;margin-bottom:0.5em}
 .zero-form button:hover {
   background-color: #004270;
 }
+
+/* === GABAO NAVBAR MODERN GOLD/BLACK/WHITE === */
+.main-nav a {
+  text-decoration: none;
+  color: var(--white, #fff);
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 24px;
+  transition: background var(--transition, 0.2s), color var(--transition, 0.2s), box-shadow var(--transition, 0.2s);
+  background: transparent;
+  border: 2px solid transparent;
+  box-shadow: none;
+  pointer-events: auto;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+}
+.main-nav a.active {
+  background: var(--gold-gradient, #FFD700);
+  color: var(--black, #111);
+  border-color: var(--gold, #FFD700);
+  box-shadow: none;
+}
+.main-nav a.active:hover,
+.main-nav a.active:focus {
+  background: var(--gold-gradient, #FFD700);
+  color: var(--black, #111);
+  border-color: var(--gold, #FFD700);
+  box-shadow: none;
+  outline: none;
+}
+.main-nav a:not(.active):hover,
+.main-nav a:not(.active):focus {
+  background: var(--gold-gradient, #FFD700);
+  color: var(--black, #111);
+  border-color: var(--gold, #FFD700);
+  box-shadow: none;
+}
+.main-nav a,
+.main-nav a.active,
+.main-nav a:not(.active):hover,
+.main-nav a:not(.active):focus,
+.main-nav a.active:hover,
+.main-nav a.active:focus {
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  padding: 0.5rem 1.2rem;
+}
+.main-nav a.active,
+.main-nav a.active:hover,
+.main-nav a.active:focus {
+  border-color: var(--gold, #FFD700);
+}
+.main-nav a:not(.active):hover,
+.main-nav a:not(.active):focus {
+  border-color: var(--gold, #FFD700);
+}
